@@ -52,10 +52,13 @@
     "eslint": "^9.39.5",
     "happy-dom": "^21.0.4",
     "playwright": "^1.65.0",
+    "postcss": "^8.5.33",
+    "postcss-selector-parser": "^7.2.1",
     "prettier": "^3.9.10",
     "stylelint": "^16.26.1",
     "stylelint-config-recommended": "^14.0.1",
     "stylelint-config-standard": "^36.0.1",
+    "tailwindcss": "4.3.5",
     "typescript": "^5.9.3"
   },
   "keywords": [
