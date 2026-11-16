@@ -1,6 +1,7 @@
 import { readFile, writeFile, mkdir, stat, access } from "node:fs/promises";
 import { resolve, dirname } from "node:path";
 import { execSync } from "node:child_process";
+import { generateTailwindCss } from "./generate-tailwind-css.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 
@@ -138,6 +139,8 @@ async function buildCore() {
   await writeFileSafe(resolve(dist, "base.css"), baseCss);
   await writeFileSafe(resolve(dist, "components.css"), componentsCss);
   await writeFileSafe(resolve(dist, "utilities.css"), utilitiesCss);
+
+  await writeFileSafe(resolve(dist, "tailwind.css"), banner + await generateTailwindCss(indexPath));
 
   // Post-build validation
   console.log("\n📋 CSS Validation");

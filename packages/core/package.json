@@ -28,7 +28,8 @@
     "./tokens": "./dist/tokens.css",
     "./base": "./dist/base.css",
     "./components": "./dist/components.css",
-    "./utilities": "./dist/utilities.css"
+    "./utilities": "./dist/utilities.css",
+    "./tailwind": "./dist/tailwind.css"
   },
   "files": [
     "dist/**/*.css",
