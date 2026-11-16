@@ -5,6 +5,7 @@
  */
 
 @layer nb.theme {
+  :root:not([data-theme]),
   [data-theme="neo-brutal"],
   [data-theme="neo-brutal-dark"],
   [data-theme="emerald"],

@@ -26,7 +26,11 @@ Use the component classes in your markup:
 </div>
 ```
 
-Dark mode is selected with a theme root:
+Without `data-theme` on the document root (`<html>`), Neo-Brutal UI defaults to `neo-brutal` light and follows `prefers-color-scheme: dark` with the `neo-brutal-dark` palette and shadows. No JavaScript is required.
+
+Set `data-theme="neo-brutal"`, `neo-brutal-dark`, `emerald`, or `emerald-dark` to force a theme regardless of system preference. Theme roots can be nested; descendants inherit the nearest theme. An empty or unknown `data-theme` on `<html>` does not opt into the automatic default.
+
+For example, force dark mode with a theme root:
 
 ```html
 <div data-theme="neo-brutal-dark">
@@ -45,7 +49,7 @@ Use the CSS-first entry when Tailwind should discover and compose `nb-*` utiliti
 
 No JavaScript plugin or Tailwind configuration is required. This entry registers every public positive `nb-*` class as a Tailwind utility, including component modifiers and subparts. Tailwind can suggest these classes and compile variants such as `hover:nb-btn-primary` and `md:nb-card`.
 
-The bundled tokens remain scoped to `data-theme="neo-brutal"` and `data-theme="neo-brutal-dark"`. Put one of these attributes on an ancestor, as in the examples above. Tokens use Tailwind's `theme` layer; the reset uses its `base` layer. This entry does not create Tailwind theme namespaces or token-derived utilities.
+The bundled tokens use the same automatic document default and explicit, nestable theme roots described above. Tokens use Tailwind's `theme` layer; the reset uses its `base` layer. This entry does not create Tailwind theme namespaces or token-derived utilities.
 
 Compose classes with `@apply`:
 

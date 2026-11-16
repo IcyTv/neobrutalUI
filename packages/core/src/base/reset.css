@@ -5,6 +5,7 @@
  */
 
 @layer nb.base {
+  :root:not([data-theme]),
   [data-theme="neo-brutal"],
   [data-theme="neo-brutal-dark"],
   [data-theme="emerald"],
@@ -14,6 +15,9 @@
     line-height: var(--nb-leading-normal);
   }
 
+  :root:not([data-theme]) *,
+  :root:not([data-theme]) *::before,
+  :root:not([data-theme]) *::after,
   [data-theme="neo-brutal"] *,
   [data-theme="neo-brutal"] *::before,
   [data-theme="neo-brutal"] *::after,
@@ -29,6 +33,7 @@
     box-sizing: border-box;
   }
 
+  :root:not([data-theme]) :focus-visible,
   [data-theme="neo-brutal"] :focus-visible,
   [data-theme="neo-brutal-dark"] :focus-visible,
   [data-theme="emerald"] :focus-visible,
@@ -37,6 +42,7 @@
     outline-offset: 2px;
   }
 
+  :root:not([data-theme]) ::selection,
   [data-theme="neo-brutal"] ::selection,
   [data-theme="neo-brutal-dark"] ::selection,
   [data-theme="emerald"] ::selection,

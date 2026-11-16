@@ -6,6 +6,7 @@
  */
 
 @layer nb.theme {
+  :root:not([data-theme]),
   [data-theme="neo-brutal"] {
     /* Primitive colors (OKLCH) */
     --nb-color-black: oklch(0% 0 0deg);
@@ -54,6 +55,32 @@
     --nb-border: var(--nb-base-content);
     --nb-focus: var(--nb-primary);
     --nb-overlay: oklch(25% 0.03 260deg / 60%);
+  }
+
+  /* Only the unthemed document follows the system preference. */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      --nb-color-red-400: oklch(48% 0.22 25deg);
+
+      --nb-base-100: oklch(18% 0.03 260deg);
+      --nb-base-200: oklch(25% 0.03 260deg);
+      --nb-base-300: oklch(35% 0.03 260deg);
+      --nb-base-content: oklch(95% 0.01 260deg);
+      --nb-base-content-muted: oklch(65% 0.03 260deg);
+
+      --nb-neutral: oklch(75% 0.03 260deg);
+      --nb-neutral-content: oklch(15% 0.03 260deg);
+      --nb-secondary: oklch(60% 0.15 255deg);
+      --nb-accent: oklch(75% 0.17 95deg);
+      --nb-accent-content: oklch(15% 0.05 95deg);
+      --nb-info: oklch(60% 0.18 255deg);
+      --nb-success: oklch(65% 0.2 145deg);
+      --nb-warning: oklch(70% 0.17 75deg);
+      --nb-warning-content: oklch(15% 0.05 75deg);
+      --nb-error: oklch(48% 0.22 25deg);
+      --nb-border: oklch(60% 0.03 260deg);
+      --nb-overlay: oklch(0% 0 0deg / 70%);
+    }
   }
 
   [data-theme="neo-brutal-dark"] {
